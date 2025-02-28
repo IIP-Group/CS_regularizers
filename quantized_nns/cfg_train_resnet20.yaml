@@ -1,0 +1,63 @@
+pretrained: True
+cuda_parallel: False
+num_workers: 16
+
+comment: 'resnet20_default'
+val_equal_test: True # False # 
+exclude_first_last: True # False
+
+batch_size: 128 
+num_epochs_soft_disc: 10 #100 
+num_epochs_disc_retrain: 10 # 40 
+regu_lambda: 10  # 1 is for resnet 34
+schlambda_type: None
+schlambda_eta: 1.0e-6
+
+regu_conv: 'binary_input_ch'  # [binary, binary_input_ch, ternary, none]
+regu_fc: 'binary'  # [binary, ternary, none]
+# Quantization parameters
+quan_conv_weight: 'scaling_binary'  # [scaling_binary,scaling_binary_zerotoone,
+    #                                        scaling_ternary, scaling_ternary_keepzero]
+quan_fc_weight: 'scaling_binary' 
+
+# Optimizer selection (the optimizers of phase-I and phase-II training are same)
+optimizer1_type: 'adam'
+optimizer2_type: 'adam'
+sgd_momentum: 0.9
+opt_wd: 0 # 1.0e-5 # weight_decay
+
+lr1: 1.0e-3
+lr2: 1.0e-3
+lr1_adjust: True
+lr2_adjust: True
+# don't forget scheduler settings!
+sch1_type: 'coswarm' # cos
+sch2_type: 'coswarm' # cos
+# for StepLR
+sch1_step_size: 16
+sch1_gamma: 0.1
+sch2_step_size: 16
+sch2_gamma: 0.1
+# for CosineAnnealingLR and CosineAnnealingWarmRestarts
+sch1_eta: 0
+sch2_eta: 0
+# for CosineAnnealingWarmRestarts
+# sch1_Tmax: num_epochs_soft_disc
+# sch2_Tmax: num_epochs_disc_retrain
+# for CosineAnnealingLR
+sch1_T0: 1
+sch1_Tmult: 1
+sch2_T0: 1
+sch2_Tmult: 1
+                
+# phase II settings
+disc_retrain: True
+
+model_type: 'resnet20'
+# [resnet18, resnet34, resnet50, vgg16_bn]
+dataset_cat: 'cifar10'
+
+
+seed: 0
+val_to_all_ratio: 0.1
+   

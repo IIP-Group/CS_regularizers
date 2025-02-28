@@ -1,0 +1,5 @@
+torch torchvision --index-url https://download.pytorch.org/whl/cu118
+tqdm==4.66.2
+matplotlib==3.8.2
+spyder-kernels==2.4 
+yaml==6.0

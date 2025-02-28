@@ -1,0 +1,2 @@
+from .quantization_modules import quant_CNN
+from .regularization_modules import lplq_regularization_CNN
