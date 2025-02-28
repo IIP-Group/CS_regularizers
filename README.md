@@ -41,6 +41,6 @@ Version 0.1: taners@ethz.ch - initial version for GitHub release.
 
 ## Acknowledgments
 This project makes use of the following external code:
-- [fasta-matlab](https://github.com/tomgoldstein/fasta-matlab) by T. Goldstein, accessed on 1/3/2024: used in the solution recovery results in Sections 3.1-3.3.
+- [fasta-matlab](https://github.com/tomgoldstein/fasta-matlab) by T. Goldstein, accessed on 1/3/2024: used in the solution recovery results in Sections 3.1-3.3 and Appendix C.
 - [pytorch_resnet_cifar10](https://github.com/akamaster/pytorch_resnet_cifar10) by I. Idelbayev, accessed on 1/12/2023: used for the pretrained ResNet-20 model in Section 3.4.
 
