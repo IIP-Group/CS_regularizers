@@ -1,0 +1,9 @@
+__pycache__
+data/
+ckpt/
+old/
+pretrained_model/
+results/
+FDTQ_ckpt/
+*.pdf
+*.asv
